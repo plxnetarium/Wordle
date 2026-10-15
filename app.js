@@ -9,12 +9,13 @@ window.onload = function(){
 }
 
 function init(){
-    for(let r = 0 ; r< height; r++){
-        for(let c = 0; c< width; c++){
-            let tile =document.createElement('span')
-            tile.id = r.toString + "-" +c.toString
-            document.getElementById("2-3")
-            title.classList.add('title')
+    for(let r = 0 ; r< height; r++){ // this creates rows
+        for(let c = 0; c< width; c++){ // this creates columns
+            let tile =document.createElement('span') //this helps in making a tile
+            tile.id = r.toString + "-" +c.toString //this is giving tile a unique ID
+            tile.classList.add('title') //this is adding a css class
+            tile.innerText = 'P'
+            document.getElementById('board').appendChild(tile)
         
         }
     }
