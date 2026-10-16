@@ -21,20 +21,18 @@ function rowOne() {
 }
 
 function userInput(event){
-    
-    console.log(event.target.textContent)
-    rowOneEl.children[count].textContent = event.target.textContent 
-    count ++
-
-
-
-
-
-
-
+    if (event.target.textContent !== "⌫" && event.target.textContent !== "Enter"){
+        console.log(event.target.textContent)
+        rowOneEl.children[count].textContent = event.target.textContent 
+        count ++
+    }
 
     if(event.target.textContent === "⌫" ){
-        rowOneEl.children[count-1].textContent = ''
+        let i = count - 1
+        rowOneEl.children[i].textContent = ''
+        console.log(count)
+        console.log(i)
+        count --
     }
 }
 
