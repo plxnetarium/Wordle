@@ -10,7 +10,7 @@ const wordAnswers = [
     "movie", "music", "night", "ocean", "paper",
     "phone", "pizza", "plant", "river", "sleep",
     "smile", "table", "tiger", "train", "water"]
-    
+
 const answer = wordAnswers[Math.floor(Math.random() * wordAnswers.length)];
 const answerLetters = answer.split('');
 
@@ -94,3 +94,5 @@ function game() {
 /*----------------------------- Event Listeners -----------------------------*/
 
 keyboardEl.forEach(button => button.addEventListener('click', userInput))
+keyboardEl.forEach(button => button.addEventListener('keydown', userInput))
+

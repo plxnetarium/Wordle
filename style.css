@@ -44,3 +44,22 @@ body{
     display: flex;
     justify-content: center;
 }
+
+#keyboard .key {
+    min-width: 42px;
+    height: 58px;
+    margin: 3px;
+    padding: 0 10px;
+    border: none;
+    /* border-radius: 7px; */
+    background: #e2e5eb;
+    color: #252b36;
+    font-size: 18px;
+    font-weight: bold;
+    /* box-shadow: 0 2px 0 #b8bec9; */
+    cursor: pointer;
+}
+
+#keyboard .key:hover {
+    background: #cbd2df;
+}
