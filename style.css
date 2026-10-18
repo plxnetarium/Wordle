@@ -14,7 +14,7 @@ body{
     align-items: center;
 }
 .correct{
-    background-color: greenyellow;
+    background-color: green;
     color: white;
     border-color: white;
 }
