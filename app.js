@@ -34,6 +34,16 @@ function userInput(event){
         console.log(i)
         count --
     }
+
+    if(event.target.textContent === "Enter"){
+        if (count === 5) {
+            console.log('You pressed enter')
+        }
+    }
+}
+
+function guess(){
+    
 }
 
 /*----------------------------- Event Listeners -----------------------------*/
