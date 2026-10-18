@@ -1,15 +1,27 @@
 /*-------------------------------- Constants --------------------------------*/
-const wordAnswers = ['yummy', 'apple', 'words']
+const wordAnswers = [
+    "apple", "beach", "brain", "bread", "brush",
+    "candy", "chair", "child", "clock", "cloud",
+    "dance", "dream", "dress", "drink", "earth",
+    "every", "floor", "fresh", "fruit", "funny",
+    "glass", "grape", "grass", "green", "happy",
+    "heart", "horse", "house", "juice", "laugh",
+    "lemon", "light", "lunch", "money", "mouse",
+    "movie", "music", "night", "ocean", "paper",
+    "phone", "pizza", "plant", "river", "sleep",
+    "smile", "table", "tiger", "train", "water"]
+    
 const answer = wordAnswers[Math.floor(Math.random() * wordAnswers.length)];
 const answerLetters = answer.split('');
 
- console.log(wordAnswers)
- console.log(answer)
- console.log(answerLetters)
+console.log(wordAnswers)
+console.log(answer)
+console.log(answerLetters)
 
 /*-------------------------------- Variables --------------------------------*/
 let count = 0
 let userWords = []
+let currentRowIndex = 0;
 
 /*------------------------ Cached Element References ------------------------*/
 const rowOneEl = document.querySelector('#row1');
@@ -19,25 +31,31 @@ console.log(keyboardEl)
 
 /*-------------------------------- Functions --------------------------------*/
 
-
-
-
+/*
 function rowOne() {
     for (let i = 0; i < rowOneEl.children.length; i++) {
         console.log(rowOneEl.children[i].textContent);
     }
-}
+} 
+*/
+
+
 
 function userInput(event) {
-    if (event.target.textContent !== "⌫" && event.target.textContent !== "Enter") {
+
+    const currentRow = rows[currentRowIndex];
+    if (!currentRow) return;
+
+
+    if (event.target.textContent !== "⌫" && event.target.textContent !== "Enter" && count < currentRow.children.length) {
         console.log(event.target.textContent)
-        rowOneEl.children[count].textContent = event.target.textContent
+        currentRow.children[count].textContent = event.target.textContent
         count++
     }
 
-    if (event.target.textContent === "⌫") {
+    if (event.target.textContent === "⌫" && count > 0) {
         let i = count - 1
-        rowOneEl.children[i].textContent = ''
+        currentRow.children[i].textContent = ''
         console.log(count)
         console.log(i)
         count--
@@ -45,16 +63,19 @@ function userInput(event) {
 
     if (event.target.textContent === "Enter" && count === 5) {
         console.log('enter')
-        userWords = Array.from(rowOneEl.children, child => child.textContent)
+        userWords = Array.from(currentRow.children, child => child.textContent)
         console.log(userWords)
         game()
+        currentRowIndex++;
+        count = 0;
     }
 }
 
 function game() {
+    const currentRow = rows[currentRowIndex]
     for (let i = 0; i < userWords.length; i++) {
         const letter = userWords[i];
-        const box = rowOneEl.children[i];
+        const box = currentRow.children[i];
         if (letter.toLowerCase() === answerLetters[i].toLowerCase()) {
             box.classList.add('correct');
             console.log(letter, "is in the correct place 🟩");
