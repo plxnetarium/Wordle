@@ -14,10 +14,14 @@ let userWords = []
 /*------------------------ Cached Element References ------------------------*/
 const rowOneEl = document.querySelector('#row1');
 const keyboardEl = document.querySelectorAll('.key');
-
+const rows = document.querySelectorAll('.row')
 console.log(keyboardEl)
 
 /*-------------------------------- Functions --------------------------------*/
+
+
+
+
 function rowOne() {
     for (let i = 0; i < rowOneEl.children.length; i++) {
         console.log(rowOneEl.children[i].textContent);
