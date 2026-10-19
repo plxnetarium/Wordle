@@ -22,6 +22,7 @@ console.log(answerLetters)
 let count = 0
 let userWords = []
 let currentRowIndex = 0;
+let hasWon = false
 
 /*------------------------ Cached Element References ------------------------*/
 const rowOneEl = document.querySelector('#row1');
@@ -42,6 +43,7 @@ function rowOne() {
 
 
 function userInput(event) {
+    if (hasWon) return;
 
     const currentRow = rows[currentRowIndex];
     if (!currentRow) return;
@@ -88,8 +90,21 @@ function game() {
             console.log(letter, "is not in the answer ⬜");
         }
     }
+    const guessedWord = userWords.join('').toLowerCase();
 
+    if (guessedWord === answer) {
+        hasWon = true;
+
+        setTimeout(() => {
+            Swal.fire({
+                title: "You Won!",
+                text: `The answer was : ${answer}`,
+            });
+        }, 100);
+    }
 }
+
+
 
 /*----------------------------- Event Listeners -----------------------------*/
 
