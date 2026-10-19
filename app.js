@@ -91,20 +91,28 @@ function game() {
     for (let i = 0; i < userWords.length; i++) {
         const letter = userWords[i];
         const box = currentRow.children[i];
-        if (letter.toLowerCase() === answerLetters[i].toLowerCase()) {
-            box.classList.add('correct');
-            updateKey(letter, 'correct');         
-            console.log(letter, "is in the correct place 🟩");
-        } else if (answerLetters.includes(letter.toLowerCase())) {
-            box.classList.add('exists');
-            updateKey(letter, 'exists');         
-            console.log(letter, "is in the wrong place 🟨");
-        } else {
-            box.classList.add('wrong');
-            updateKey(letter, 'wrong');
-            console.log(answerLetters[i])
-            console.log(letter, "is not in the answer ⬜");
-        }
+
+        setTimeout(() => {
+            box.classList.add('flip');
+            setTimeout(() => {
+
+                if (letter.toLowerCase() === answerLetters[i].toLowerCase()) {
+                    box.classList.add('correct');
+                    updateKey(letter, 'correct');
+                    console.log(letter, "is in the correct place 🟩");
+                } else if (answerLetters.includes(letter.toLowerCase())) {
+                    box.classList.add('exists');
+                    updateKey(letter, 'exists');
+                    console.log(letter, "is in the wrong place 🟨");
+                } else {
+                    box.classList.add('wrong');
+                    updateKey(letter, 'wrong');
+                    console.log(answerLetters[i])
+                    console.log(letter, "is not in the answer ⬜");
+                }
+
+            }, 250);
+        }, i * 500);
     }
     const guessedWord = userWords.join('').toLowerCase();
 
