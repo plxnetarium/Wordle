@@ -71,6 +71,22 @@ function userInput(event) {
         console.log('enter')
         userWords = Array.from(currentRow.children, child => child.textContent)
         console.log(userWords)
+        const guessedWord = userWords.join('').toLowerCase();
+
+        if (!wordAnswers.includes(guessedWord)) {
+            Swal.fire({
+                toast: true,
+                position: "top",
+                title: "Not in word list",
+                showConfirmButton: false,
+                timer: 1500,
+                background: "#333",
+                color: "#fff",
+                width: "180px"
+            });
+
+            return;
+        }
         game()
         currentRowIndex++;
         count = 0;
