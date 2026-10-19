@@ -31,17 +31,10 @@ let hasWon = false
 const rowOneEl = document.querySelector('#row1');
 const keyboardEl = document.querySelectorAll('.key');
 const rows = document.querySelectorAll('.row')
+const themeToggle = document.querySelector('#darkBtn');
 console.log(keyboardEl)
 
 /*-------------------------------- Functions --------------------------------*/
-
-/*
-function rowOne() {
-    for (let i = 0; i < rowOneEl.children.length; i++) {
-        console.log(rowOneEl.children[i].textContent);
-    }
-} 
-*/
 
 function updateKey(letter, status) {
     const key = document.querySelector(
@@ -131,7 +124,7 @@ function game() {
                     winSound.play();
                 }
             });
-        }, 100);
+        }, 2500);
     } else if (currentRowIndex === rows.length - 1) {
         setTimeout(() => {
             Swal.fire({
@@ -145,7 +138,7 @@ function game() {
                     loseSound.play();
                 }
             });
-        }, 100);
+        }, 2500);
     }
 }
 
@@ -166,6 +159,16 @@ document.addEventListener("keydown", function (event) {
         else if (button.textContent === "⌫") {
             event.key === "Backspace" && button.click();
         }
+    }
+});
+
+themeToggle.addEventListener('click', function () {
+    document.body.classList.toggle('dark-mode');
+
+    if (document.body.classList.contains('dark-mode')) {
+        themeToggle.textContent = 'Light mode';
+    } else {
+        themeToggle.textContent = 'Dark mode';
     }
 });
 

@@ -101,3 +101,65 @@ body{
 .tile.flip {
     animation: flip 500ms ease both;
 }
+
+#darkBtn{
+    margin-bottom: 12px;
+    padding: 8px 14px;
+    border: 1px solid currentColor;
+    border-radius: 6px;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+#darkBtn:hover{
+    background-color: #CBD2DF;
+}
+body {
+    background-color: #ffffff;
+    color: #1a1a1b;
+    transition: background-color 200ms, color 200ms;
+}
+
+body.dark-mode {
+    background-color: #121213;
+    color: #ffffff;
+}
+
+body.dark-mode .tile {
+    border-color: #565758;
+}
+
+body.dark-mode #keyboard .key {
+    background-color: #818384;
+    color: #ffffff;
+}
+
+body.dark-mode #keyboard .key:hover {
+    background-color: #96989a;
+}
+
+/* Keep the keyboard's result colors in dark mode. */
+body.dark-mode #keyboard .key.correct {
+    background-color: green;
+}
+
+body.dark-mode #keyboard .key.exists {
+    background-color: rgb(186, 186, 3);
+}
+
+body.dark-mode #keyboard .key.wrong {
+    background-color: grey;
+}
+
+#theme-toggle {
+    margin-bottom: 12px;
+    padding: 8px 14px;
+    border: 1px solid currentColor;
+    border-radius: 6px;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+}

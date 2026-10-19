@@ -40,7 +40,9 @@ https://sweetalert2.github.io/#download
 https://www.nytimes.com/games/wordle/index.html
 https://www.w3schools.com/jsref/met_win_settimeout.asp
 https://www.w3schools.com/graphics/game_sound.asp
-
+http://w3schools.com/howto/tryit.asp?filename=tryhow_css_flip_card
+https://www.w3schools.com/howto/howto_js_toggle_dark_mode.asp
+https://gist.github.com/slushman/34e60d6bc479ac8fc698df8c226e4264
 
 ## Credits
 
