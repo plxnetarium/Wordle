@@ -9,7 +9,7 @@ const wordAnswers = [
     "lemon", "light", "lunch", "money", "mouse",
     "movie", "music", "night", "ocean", "paper",
     "phone", "pizza", "plant", "river", "sleep",
-    "smile", "table", "tiger", "train", "water"]
+    "smile", "table", "tiger", "train", "water", "zaids"]
 
 const answer = wordAnswers[Math.floor(Math.random() * wordAnswers.length)];
 const answerLetters = answer.split('');
@@ -113,7 +113,7 @@ function game() {
                 imageUrl: 'https://media.tenor.com/I3WYELgcTVgAAAAi/cat-beats-cat-aggr-meme.gif',
                 imageHeight: 200,
                 imageWidth: 200,
-                imageAlt:"Disappointed Cat"
+                imageAlt: "Disappointed Cat"
             });
         }, 100);
     }
@@ -124,5 +124,19 @@ function game() {
 /*----------------------------- Event Listeners -----------------------------*/
 
 keyboardEl.forEach(button => button.addEventListener('click', userInput))
-keyboardEl.forEach(button => button.addEventListener('keydown', userInput))
+
+
+
+document.addEventListener("keydown", function (event) {
+
+    for (const button of keyboardEl) {
+       button.textContent === event.key.toUpperCase() && (button.click()); 
+       if (button.textContent === "Enter") {
+        event.key === "Enter" && button.click();
+       }
+       else if(button.textContent === "⌫"){
+        event.key === "Backspace" && button.click();
+       }
+    }
+});
 
