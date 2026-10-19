@@ -32,6 +32,38 @@ body{
     text-transform: uppercase;
 }
 
+.game-controls {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#play-again {
+    padding: 8px 14px;
+    border: 1px solid #8fb4ed;
+    border-radius: 8px;
+    background: #e5efff;
+    color: #234e91;
+    cursor: pointer;
+}
+
+#play-again:hover {
+    background: #cddfff;
+}
+
+body.dark-mode #play-again {
+    background: #203959;
+    border-color: #547fb8;
+    color: #d4e6ff;
+}
+
+body.dark-mode #play-again:hover {
+    background: #2e4d75;
+}
+
 #win-streak {
     min-width: 32px;
     font-size: 26px;
@@ -47,6 +79,11 @@ body.dark-mode .streak-counter {
 }
 
 @media (max-width: 600px) {
+    .game-controls {
+        position: static;
+        justify-content: flex-end;
+        margin: 0 12px 16px;
+    }
     .streak-counter {
         position: static;
         width: fit-content;
@@ -147,16 +184,13 @@ body.dark-mode .streak-counter {
 }
 
 #darkBtn{
-    margin-bottom: 12px;
+    margin-bottom: 0;
     padding: 8px 14px;
     border: 1px solid currentColor;
     border-radius: 6px;
     background: transparent;
     color: inherit;
     cursor: pointer;
-    position: absolute;
-    top: 20px;
-    right: 20px;
 }
 #darkBtn:hover{
     background-color: #CBD2DF;

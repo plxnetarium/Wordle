@@ -24,10 +24,15 @@ const keyboardEl = document.querySelectorAll('.key');
 const rows = document.querySelectorAll('.row')
 const themeToggle = document.querySelector('#darkBtn');
 const winStreakEl = document.querySelector('#win-streak');
+const playAgainBtn = document.querySelector('#play-again');
 winStreakEl.textContent = winStreak;
 console.log(keyboardEl)
 
 /*-------------------------------- Functions --------------------------------*/
+
+function playAgain() {
+    window.location.reload();
+}
 
 function updateKey(letter, status) {
     const key = document.querySelector(
@@ -144,6 +149,8 @@ function game() {
 
 
 /*----------------------------- Event Listeners -----------------------------*/
+
+playAgainBtn.addEventListener('click', playAgain);
 
 keyboardEl.forEach(button => button.addEventListener('click', userInput))
 
