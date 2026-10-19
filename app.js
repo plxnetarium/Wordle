@@ -102,7 +102,7 @@ function game() {
                 imageUrl: "https://media1.tenor.com/m/aNKgtdT5ymEAAAAd/cat-dance-cat.gif",
                 imageWidth: 200,
                 imageHeight: 200,
-                imageAlt: "Custom image"
+                imageAlt: "Cats Dancing"
             });
         }, 100);
     } else if (currentRowIndex === rows.length - 1) {
@@ -110,6 +110,10 @@ function game() {
             Swal.fire({
                 title: "You Lost",
                 text: `You've used all your guesses. The Answer was: ${answer}`,
+                imageUrl: 'https://media.tenor.com/I3WYELgcTVgAAAAi/cat-beats-cat-aggr-meme.gif',
+                imageHeight: 200,
+                imageWidth: 200,
+                imageAlt:"Disappointed Cat"
             });
         }, 100);
     }
