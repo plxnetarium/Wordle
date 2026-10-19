@@ -138,7 +138,7 @@ body.dark-mode #keyboard .key {
 }
 
 body.dark-mode #keyboard .key:hover {
-    background-color: #96989a;
+    background-color: #686a6b;
 }
 
 /* Keep the keyboard's result colors in dark mode. */
@@ -151,7 +151,7 @@ body.dark-mode #keyboard .key.exists {
 }
 
 body.dark-mode #keyboard .key.wrong {
-    background-color: grey;
+    background-color: rgb(55, 54, 54);
 }
 
 #theme-toggle {

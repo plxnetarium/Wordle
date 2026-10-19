@@ -1,16 +1,6 @@
 /*-------------------------------- Constants --------------------------------*/
-const wordAnswers = [
-    "apple", "beach", "brain", "bread", "brush",
-    "candy", "chair", "child", "clock", "cloud",
-    "dance", "dream", "dress", "drink", "earth",
-    "every", "floor", "fresh", "fruit", "funny",
-    "glass", "grape", "grass", "green", "happy",
-    "heart", "horse", "house", "juice", "laugh",
-    "lemon", "light", "lunch", "money", "mouse",
-    "movie", "music", "night", "ocean", "paper",
-    "phone", "pizza", "plant", "river", "sleep",
-    "smile", "table", "tiger", "train", "water", "zaids"]
-
+import { wordAnswers } from './wordle-list.js';
+console.log(wordAnswers); 
 const answer = wordAnswers[Math.floor(Math.random() * wordAnswers.length)];
 const answerLetters = answer.split('');
 const winSound = new Audio('./sounds/win.mp3');
