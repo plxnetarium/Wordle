@@ -43,7 +43,17 @@ function rowOne() {
 } 
 */
 
+function updateKey(letter, status) {
+    const key = document.querySelector(
+        `.key[data-key="${letter.toUpperCase()}"]`
+    );
 
+    if (!key || key.classList.contains('correct')) return;
+    if (key.classList.contains('exists') && status === 'wrong') return;
+
+    key.classList.remove('wrong', 'exists');
+    key.classList.add(status);
+}
 
 function userInput(event) {
     if (hasWon) return;
@@ -83,12 +93,15 @@ function game() {
         const box = currentRow.children[i];
         if (letter.toLowerCase() === answerLetters[i].toLowerCase()) {
             box.classList.add('correct');
+            updateKey(letter, 'correct');         
             console.log(letter, "is in the correct place 🟩");
         } else if (answerLetters.includes(letter.toLowerCase())) {
             box.classList.add('exists');
+            updateKey(letter, 'exists');         
             console.log(letter, "is in the wrong place 🟨");
         } else {
-            box.classList.add('wrong')
+            box.classList.add('wrong');
+            updateKey(letter, 'wrong');
             console.log(answerLetters[i])
             console.log(letter, "is not in the answer ⬜");
         }

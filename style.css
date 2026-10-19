@@ -58,7 +58,7 @@ body{
     margin: 3px;
     padding: 0 10px;
     border: none;
-    /* border-radius: 7px; */
+    border-radius: 6px; 
     background: #e2e5eb;
     color: #252b36;
     font-size: 18px;
@@ -69,4 +69,19 @@ body{
 
 #keyboard .key:hover {
     background: #cbd2df;
+}
+
+#keyboard .key.correct {
+    background: green;
+    color: white;
+}
+
+#keyboard .key.exists {
+    background: rgb(186, 186, 3);
+    color: white;
+}
+
+#keyboard .key.wrong {
+    background: grey;
+    color: white;
 }
