@@ -1,6 +1,6 @@
 /*-------------------------------- Constants --------------------------------*/
 import { wordAnswers } from './wordle-list.js';
-console.log(wordAnswers); 
+console.log(wordAnswers);
 const answer = wordAnswers[Math.floor(Math.random() * wordAnswers.length)];
 const answerLetters = answer.split('');
 const winSound = new Audio('./sounds/win.mp3');
@@ -16,12 +16,15 @@ let count = 0
 let userWords = []
 let currentRowIndex = 0;
 let hasWon = false
+let winStreak = Number(localStorage.getItem('winStreak')) || 0;
 
 /*------------------------ Cached Element References ------------------------*/
 const rowOneEl = document.querySelector('#row1');
 const keyboardEl = document.querySelectorAll('.key');
 const rows = document.querySelectorAll('.row')
 const themeToggle = document.querySelector('#darkBtn');
+const winStreakEl = document.querySelector('#win-streak');
+winStreakEl.textContent = winStreak;
 console.log(keyboardEl)
 
 /*-------------------------------- Functions --------------------------------*/
@@ -101,6 +104,9 @@ function game() {
 
     if (guessedWord === answer) {
         hasWon = true;
+        winStreak++;
+        localStorage.setItem('winStreak', winStreak);
+        winStreakEl.textContent = winStreak;
 
         setTimeout(() => {
             Swal.fire({
@@ -116,6 +122,9 @@ function game() {
             });
         }, 2500);
     } else if (currentRowIndex === rows.length - 1) {
+        winStreak = 0;
+        localStorage.setItem('winStreak', winStreak);
+        winStreakEl.textContent = winStreak;
         setTimeout(() => {
             Swal.fire({
                 title: "You Lost",
