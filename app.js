@@ -13,7 +13,10 @@ const wordAnswers = [
 
 const answer = wordAnswers[Math.floor(Math.random() * wordAnswers.length)];
 const answerLetters = answer.split('');
-
+const winSound = new Audio('./sounds/win.mp3');
+winSound.volume = 0.5;
+const loseSound = new Audio('./sounds/lose.mp3');
+loseSound.volume = 0.5;
 console.log(wordAnswers)
 console.log(answer)
 console.log(answerLetters)
@@ -99,10 +102,13 @@ function game() {
             Swal.fire({
                 title: "You Won",
                 text: `The Answer was: ${answer}`,
-                imageUrl: "https://media1.tenor.com/m/aNKgtdT5ymEAAAAd/cat-dance-cat.gif",
+                imageUrl: "https://media1.tenor.com/m/LedML6uF2-4AAAAC/cat-scuba-scuba.gif",
                 imageWidth: 200,
                 imageHeight: 200,
-                imageAlt: "Cats Dancing"
+                imageAlt: "Cats Dancing",
+                didOpen: () => {
+                    winSound.play();
+                }
             });
         }, 100);
     } else if (currentRowIndex === rows.length - 1) {
@@ -113,7 +119,10 @@ function game() {
                 imageUrl: 'https://media.tenor.com/I3WYELgcTVgAAAAi/cat-beats-cat-aggr-meme.gif',
                 imageHeight: 200,
                 imageWidth: 200,
-                imageAlt: "Disappointed Cat"
+                imageAlt: "Disappointed Cat",
+                didOpen: () => {
+                    loseSound.play();
+                }
             });
         }, 100);
     }
@@ -126,17 +135,16 @@ function game() {
 keyboardEl.forEach(button => button.addEventListener('click', userInput))
 
 
-
 document.addEventListener("keydown", function (event) {
 
     for (const button of keyboardEl) {
-       button.textContent === event.key.toUpperCase() && (button.click()); 
-       if (button.textContent === "Enter") {
-        event.key === "Enter" && button.click();
-       }
-       else if(button.textContent === "⌫"){
-        event.key === "Backspace" && button.click();
-       }
+        button.textContent === event.key.toUpperCase() && (button.click());
+        if (button.textContent === "Enter") {
+            event.key === "Enter" && button.click();
+        }
+        else if (button.textContent === "⌫") {
+            event.key === "Backspace" && button.click();
+        }
     }
 });
 

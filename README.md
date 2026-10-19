@@ -39,6 +39,8 @@ Screenshots will be added when the game interface is ready.
 https://sweetalert2.github.io/#download
 https://www.nytimes.com/games/wordle/index.html
 https://www.w3schools.com/jsref/met_win_settimeout.asp
+https://www.w3schools.com/graphics/game_sound.asp
+
 
 ## Credits
 
