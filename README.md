@@ -35,6 +35,11 @@ Screenshots will be added when the game interface is ready.
 - Add an option to start a new game.
 - Style the game for desktop and mobile screens.
 
+## References
+https://sweetalert2.github.io/#download
+https://www.nytimes.com/games/wordle/index.html
+https://www.w3schools.com/jsref/met_win_settimeout.asp
+
 ## Credits
 
 Inspired by Wordle, the word-guessing game created by Josh Wardle.

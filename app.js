@@ -97,8 +97,19 @@ function game() {
 
         setTimeout(() => {
             Swal.fire({
-                title: "You Won!",
-                text: `The answer was : ${answer}`,
+                title: "You Won",
+                text: `The Answer was: ${answer}`,
+                imageUrl: "https://media1.tenor.com/m/aNKgtdT5ymEAAAAd/cat-dance-cat.gif",
+                imageWidth: 200,
+                imageHeight: 200,
+                imageAlt: "Custom image"
+            });
+        }, 100);
+    } else if (currentRowIndex === rows.length - 1) {
+        setTimeout(() => {
+            Swal.fire({
+                title: "You Lost",
+                text: `You've used all your guesses. The Answer was: ${answer}`,
             });
         }, 100);
     }
