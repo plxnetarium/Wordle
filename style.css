@@ -9,6 +9,50 @@ body{
     letter-spacing: 2px;
     
 }
+
+.streak-counter {
+    position: absolute;
+    top: 16px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 0;
+    padding: 10px 14px;
+    border: 1px solid #d5e5d3;
+    border-radius: 14px;
+    background: #f2f8f0;
+    color: #365b30;
+}
+
+.streak-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+#win-streak {
+    min-width: 32px;
+    font-size: 26px;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+    line-height: 1;
+}
+
+body.dark-mode .streak-counter {
+    background: #202b20;
+    border-color: #3c5137;
+    color: #b5dca8;
+}
+
+@media (max-width: 600px) {
+    .streak-counter {
+        position: static;
+        width: fit-content;
+        margin: 0 0 16px 12px;
+    }
+}
 #game{
     display: flex;
     flex-direction: column;
