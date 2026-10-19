@@ -39,11 +39,16 @@ body{
     margin: 1px;
     font-size: 30px;
     text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
 }
 
 .row{
     display: flex;
     justify-content: center;
+    
 }
 
 #keyboard .key {
