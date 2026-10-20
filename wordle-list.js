@@ -1172,7 +1172,7 @@ export const wordAnswers= [
   "lusty",
   "lying",
   "lymph",
-  "lyric",
+  "words",  "lyric", "yummy",'rythm', 
   "macaw",
   "macho",
   "macro",
